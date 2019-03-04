@@ -1,0 +1,34 @@
+<% title "Login", false, false %>
+<div class="auth login-cover login-cover--cover">
+  <div class="login-cover--image" style="background-image: url(<%= image_path('login-bg-001.jpeg') %>)"></div>
+  <div class="login-cover--bg"></div>
+</div>
+
+<div class="page-container fade show">
+  <div class="login animated fadeIn">
+    <div class="login-header">
+      <div class="login-brand">
+        <span class="login-logo"></span>
+        <b>Color</b>
+        Admin
+        <small>Lorem ipsum dolor sit amet.</small>
+      </div>
+      <div class="login-icon">
+        <%= mi.lock %>
+      </div>
+    </div>
+    <div class="login-content">
+      <form class="mb-0">
+        <div class="form-group m-b-20">
+          <input id="userEmail" name="userEmail" type="email" placeholder="Email Address" class="form-control form-control-lg" required />
+        </div>
+        <div class="form-group m-b-20">
+          <input id="userPassword" name="userPassword" type="password" placeholder="Password" class="form-control form-control-lg" required />
+        </div>
+        <div class="login-buttons">
+          <button class="btn btn-dark btn-block" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

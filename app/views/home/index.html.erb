@@ -1,0 +1,92 @@
+<% title "Index", true, true %>
+
+<section class="content">
+  <div class="content__header">
+    <h2 class="content__header--title">Components</h2>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <h2 class="card__header--title">
+        Toggle Switch
+        <small>CSS only Checkbox based toggle Switches.</small>
+      </h2>
+    </div>
+    <div class="card__body">
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <p>Basic Example</p>
+          <div class="form-group">
+            <div class="toggle-switch">
+              <input type="checkbox" name="onOff" id="onOff" class="toggle-switch__checkbox" />
+              <i class="toggle-switch__helper"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <h2 class="card__header--title">
+        Basic Example
+        <small>Use any of the available button classes to quickly create a styled button.</small>
+      </h2>
+    </div>
+    <div class="card__body">
+      <p>Color Themes</p>
+      <div class="btn-demo">
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn--light">MAE Style</button>
+        <button class="btn btn-link">Link</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <h2 class="card__header--title">
+        Form Controls
+        <small>Extend form controls by adding text or buttons before, after, or on both sides of any text-based inputs.</small>
+      </h2>
+    </div>
+    <div class="card__body">
+      <p>Basic Examples</p>
+      <div class="row">
+        <div class="col">
+          <span class="form-input-group--addon">
+            <span>
+              <%= mi.person %>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-input-group">
+            <div class="form-group form-group--float">
+              <input id="username" name="username" type="email" class="form-control" data-form-input="float" />
+              <label for="username" class="form-label">Username</label>
+              <i class="form-group__bar"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-input-group">
+            <span class="form-input-group--addon">
+              <%= mi.person %>
+            </span>
+            <div class="form-group form-group--float">
+              <input id="username" name="username" type="email" class="form-control" data-form-input="float" />
+              <label for="username" class="form-label">Username</label>
+              <i class="form-group__bar"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
