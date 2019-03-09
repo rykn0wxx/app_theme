@@ -1,3 +1,4 @@
+$auth-width:        450px;
 .rykn0wxx {
   .mudhead.auth {
     .animated {
@@ -29,14 +30,14 @@
     .login {
       right: 0;
       color: #ccc;
-      width: 400px;
-      margin: 168px 0 0 -200px;
+      width: $auth-width;
+      margin: 100px 0 0 -200px;
       position: absolute;
       top: 0;
       left: 50%;
       border-radius: 4px;
       &-header {
-        width: 400px;
+        width: $auth-width;
         padding: 0 20px;
         margin: 0;
         top: 0;
@@ -96,7 +97,7 @@
       }
       &-content {
         padding: 30px 20px 20px;
-        width: 400px;
+        width: $auth-width;
         margin: 0 auto;
       }
       &-link {
@@ -120,6 +121,16 @@
             box-shadow: 0 0 5px rgba($primary, 1);
             border: 1px solid rgba($primary, 1);
           }
+        }
+      }
+      &-footer {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 300;
+        > a {
+          font-weight: 400;
+          font-size: 14px;
+          margin-left: 5px;
         }
       }
     }

@@ -23,7 +23,8 @@
           .toggleClass(_this.classes.valid, curElement.checkValidity() && curElement.value.length !== 0 && i.type === 'blur')
       })
       elements.each((ind, el) => {
-        if ($(el).val() !== 0) {
+        if ($(el).val().length !== 0) {
+          console.log($(el).val(), $(el))
           $(el).parents(_this.formGroup).addClass(_this.classes.filled)
         }
       })
