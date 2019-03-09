@@ -6,3 +6,4 @@
 
 //= require app-helpers
 //= require form-control
+//= require table-row

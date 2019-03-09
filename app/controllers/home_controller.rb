@@ -3,4 +3,6 @@ class HomeController < ApplicationController
   end
   def login
   end
+  def mindex
+  end
 end

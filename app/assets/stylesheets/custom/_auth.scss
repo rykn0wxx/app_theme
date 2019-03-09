@@ -95,23 +95,31 @@
         }
       }
       &-content {
-        padding: 20px;
+        padding: 30px 20px 20px;
         width: 400px;
         margin: 0 auto;
       }
-      .form-control {
-        background-color: rgba(255,255,255, 0.2);
-        border: 1px solid transparent;
-        color: rgba(255,255,255,.75);
-        font-size: 14px;
-        transition: all 0.3s ease-in-out;
-        outline: none;
-        &:focus {
-          border-color: transparent;
-          // box-shadow: 0 0 0 0.125rem rgba(255,255,255,.3);
-          // box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-          box-shadow: 0 0 5px rgba($primary, 1);
-          border: 1px solid rgba($primary, 1);
+      &-link {
+        color: $secondary;
+        b {
+          font-weight: 500;
+        }
+      }
+      .form-group:not(.form-group--float) {
+        .form-control {
+          background-color: rgba(255,255,255, 0.2);
+          border: 1px solid transparent;
+          color: rgba(255,255,255,.75);
+          font-size: 14px;
+          transition: all 0.3s ease-in-out;
+          outline: none;
+          &:focus {
+            border-color: transparent;
+            // box-shadow: 0 0 0 0.125rem rgba(255,255,255,.3);
+            // box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+            box-shadow: 0 0 5px rgba($primary, 1);
+            border: 1px solid rgba($primary, 1);
+          }
         }
       }
     }

@@ -9,8 +9,10 @@
     <div class="login-header">
       <div class="login-brand">
         <span class="login-logo"></span>
+        <%= link_to root_path, :class => "login-link" do %>
         <b>Color</b>
         Admin
+        <% end %>
         <small>Lorem ipsum dolor sit amet.</small>
       </div>
       <div class="login-icon">
@@ -19,11 +21,19 @@
     </div>
     <div class="login-content">
       <form class="mb-0">
-        <div class="form-group m-b-20">
-          <input id="userEmail" name="userEmail" type="email" placeholder="Email Address" class="form-control form-control-lg" required />
+        <div class="form-input-group mb-4">
+          <div class="form-group form-group--float">
+            <input id="userEmail" name="userEmail" type="email" class="form-control form-control-lg" data-form-input="float" />
+            <label for="userEmail" class="form-label">Email</label>
+            <i class="form-group__bar"></i>
+          </div>
         </div>
-        <div class="form-group m-b-20">
-          <input id="userPassword" name="userPassword" type="password" placeholder="Password" class="form-control form-control-lg" required />
+        <div class="form-input-group mb-4">
+          <div class="form-group form-group--float">
+            <input id="userPassword" name="userPassword" type="password" class="form-control form-control-lg" data-form-input="float" />
+            <label for="userPassword" class="form-label">Password</label>
+            <i class="form-group__bar"></i>
+          </div>
         </div>
         <div class="login-buttons">
           <button class="btn btn-dark btn-block" type="submit">Login</button>
