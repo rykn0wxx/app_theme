@@ -22,6 +22,17 @@
         background-color: #cbd2d5;
         border-color: #cbd2d5;
       }
+      &--default {
+        // color: #22313a;
+        &:hover {
+          color: #22313a;
+          background-color: #cbd2d5;
+          border: 0 solid rgba(0, 0, 0, 0);
+        }
+        &:active {
+          box-shadow: none;
+        }
+      }
       &-link {
         color: #b4bfc3;
       }
@@ -34,6 +45,9 @@
           border-color: darken($light, 7.5%);
           color: lighten(#b4bfc3, 7.5%);
         }
+      }
+      &:not(:disabled):not(.disabled):active:focus, :not(:disabled):not(.disabled).active:focus {
+        box-shadow: none;
       }
     }
   }

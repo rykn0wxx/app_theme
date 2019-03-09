@@ -1,3 +1,8 @@
-<h1>Edit <%= singular_table_name.capitalize %></h1>
+<%% title "Editing <%= singular_table_name.titleize %>", true, true %>
 
-<%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Edit <%= singular_table_name.capitalize %></h1>
+    <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+  </div>
+</div>

@@ -23,13 +23,19 @@
     </thead>
     <tbody>
       <%% @<%= plural_table_name%>.each do |<%= singular_table_name %>| %>
-        <%%= content_tag :tr, :id => dom_id(<%= singular_table_name %>), :class => dom_class(<%= singular_table_name %>) + "table-row", :tabindex => 0, :role => "link", :data => { :'row-url' => <%= singular_table_name %>_path(<%= singular_table_name %>) } do %>
+        <%%= content_tag :tr, :id => dom_id(<%= singular_table_name %>), :class => dom_class(<%= singular_table_name %>) + " table-row", :tabindex => 0, :role => "link", :data => { :'row-url' => <%= singular_table_name %>_path(<%= singular_table_name %>) } do %>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
           <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
-          <td>
-            <%%= link_to 'Show', <%= singular_table_name %> %>
-            <%%= link_to 'Destroy', <%= model_resource_name %>, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+          <td class="table-row__actions">
+            <div class="btn-group">
+              <%%= link_to <%= singular_table_name %>, :class => "btn table-row__link text-info py-0" do %>
+                <%%= mi.visibility %>
+              <%% end %>
+              <%%= link_to <%= model_resource_name %>, :class => "btn table-row__link text-danger py-0", :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+                <%%= mi.delete %>
+              <%% end %>
+            </div>
           </td>
         <%% end %>
       <%% end %>

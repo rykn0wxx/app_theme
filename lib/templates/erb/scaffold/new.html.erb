@@ -1,3 +1,8 @@
-<h1>New <%= singular_table_name %></h1>
+<%% title "New <%= singular_table_name.titleize %>", true, true %>
 
-<%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>New <%= singular_table_name %></h1>
+    <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+  </div>
+</div>
