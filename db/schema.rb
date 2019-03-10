@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_070002) do
+ActiveRecord::Schema.define(version: 2019_03_10_164848) do
 
   create_table "dim_call_action_reasons", force: :cascade do |t|
     t.string "call_action_reason", limit: 50, default: "", null: false
@@ -155,6 +155,46 @@ ActiveRecord::Schema.define(version: 2019_03_10_070002) do
     t.index ["dim_client_id"], name: "index_dim_uip_users_on_dim_client_id"
     t.index ["dim_emp_user_id"], name: "index_dim_uip_users_on_dim_emp_user_id"
     t.index ["user_id"], name: "index_dim_uip_users_on_user_id", unique: true
+  end
+
+  create_table "tmp_fact_call_details", force: :cascade do |t|
+    t.string "tmp_parent_project"
+    t.string "tmp_project_name"
+    t.string "tmp_timezone"
+    t.string "tmp_call_category"
+    t.string "tmp_call_type"
+    t.string "tmp_call_action"
+    t.string "tmp_call_action_reason"
+    t.string "tmp_disp"
+    t.integer "tmp_service_id"
+    t.string "tmp_service_name"
+    t.integer "tmp_orig_srv"
+    t.string "tmp_user_id"
+    t.string "tmp_ivr_param_1"
+    t.string "tmp_ivr_param_2"
+    t.string "tmp_ivr_param_3"
+    t.string "tmp_ivr_param_4"
+    t.string "tmp_ivr_param_9"
+    t.string "tmp_ivr_param_10"
+    t.string "tmp_ivr_param_16"
+    t.string "tmp_ivr_param_18"
+    t.string "tmp_ivr_param_19"
+    t.integer "tmp_call"
+    t.integer "tmp_seq"
+    t.string "tmp_dialed_num"
+    t.datetime "tmp_answer_date"
+    t.datetime "tmp_end_date"
+    t.datetime "tmp_end_date_tz"
+    t.datetime "tmp_start_date"
+    t.datetime "tmp_start_date_tz"
+    t.datetime "tmp_wrap_end_date"
+    t.integer "tmp_hold_number"
+    t.integer "tmp_queue_time"
+    t.integer "tmp_talk_time"
+    t.integer "tmp_hold_time"
+    t.integer "tmp_wrap_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

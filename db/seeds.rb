@@ -134,3 +134,12 @@
 # end
 
 # upload_uip_services
+
+def upload_temp_fact
+  processed_data = []
+  spreadsheet = CSV.table('raw_files/temp_fact.csv', { :headers => true })
+  trans_data = spreadsheet.map { |row| row.to_hash }
+  TmpFactCallDetail.create!(trans_data)
+end
+
+upload_temp_fact
