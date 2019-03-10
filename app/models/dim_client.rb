@@ -19,6 +19,7 @@
 class DimClient < ApplicationRecord
   belongs_to :dim_project
   has_many :dim_uip_services
+  has_many :dim_uip_users
   has_many :dim_services, :through => :dim_uip_services
   validates :name, :presence => true, :uniqueness => true, :length => { :maximum => 100 }
   validates :code, :length => { :maximum => 20 }

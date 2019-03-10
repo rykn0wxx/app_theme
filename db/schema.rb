@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_060345) do
+ActiveRecord::Schema.define(version: 2019_03_10_070002) do
 
   create_table "dim_call_action_reasons", force: :cascade do |t|
     t.string "call_action_reason", limit: 50, default: "", null: false
@@ -61,6 +61,30 @@ ActiveRecord::Schema.define(version: 2019_03_10_060345) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["disp"], name: "index_dim_disps_on_disp", unique: true
+  end
+
+  create_table "dim_emp_users", force: :cascade do |t|
+    t.string "emp_id", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "login_id", default: "", null: false
+    t.boolean "active", default: true
+    t.date "hire_date"
+    t.date "term_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emp_id"], name: "index_dim_emp_users_on_emp_id", unique: true
+  end
+
+  create_table "dim_ivr_params", force: :cascade do |t|
+    t.string "ivr_param", default: "", null: false
+    t.integer "ivr_code"
+    t.integer "dim_client_id"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dim_client_id"], name: "index_dim_ivr_params_on_dim_client_id"
+    t.index ["ivr_param"], name: "index_dim_ivr_params_on_ivr_param", unique: true
   end
 
   create_table "dim_languages", force: :cascade do |t|
@@ -117,6 +141,20 @@ ActiveRecord::Schema.define(version: 2019_03_10_060345) do
     t.datetime "updated_at", null: false
     t.index ["dim_client_id"], name: "index_dim_uip_services_on_dim_client_id"
     t.index ["dim_service_id"], name: "index_dim_uip_services_on_dim_service_id"
+  end
+
+  create_table "dim_uip_users", force: :cascade do |t|
+    t.string "user_id", default: "", null: false
+    t.integer "dim_emp_user_id"
+    t.integer "dim_client_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dim_client_id"], name: "index_dim_uip_users_on_dim_client_id"
+    t.index ["dim_emp_user_id"], name: "index_dim_uip_users_on_dim_emp_user_id"
+    t.index ["user_id"], name: "index_dim_uip_users_on_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
