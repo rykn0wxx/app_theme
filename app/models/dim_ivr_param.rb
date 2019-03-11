@@ -18,6 +18,7 @@
 
 class DimIvrParam < ApplicationRecord
   belongs_to :dim_client
+  has_many :fact_call_details
   validates :ivr_param, :presence => true, :uniqueness => true
   validates :ivr_code, :presence => true
 end

@@ -1,0 +1,100 @@
+<% title "Index", true, true %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Fact_call_details</h1>
+  </div>
+  <div class="col-sm-6 text-right">
+    <%= link_to new_fact_call_detail_path, :class => 'btn btn--light' do -%>
+      Add New Fact call detail
+    <% end -%>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Dim client</th>
+        <th>Dim timezone</th>
+        <th>Dim call category</th>
+        <th>Dim call type</th>
+        <th>Dim call action</th>
+        <th>Dim call action reason</th>
+        <th>Dim disp</th>
+        <th>Dim service</th>
+        <th>Call ivr param 1</th>
+        <th>Call ivr param 2</th>
+        <th>Call ivr param 3</th>
+        <th>Call ivr param 4</th>
+        <th>Call ivr param 9</th>
+        <th>Call ivr param 10</th>
+        <th>Call ivr param 16</th>
+        <th>Call ivr param 18</th>
+        <th>Call ivr param 19</th>
+        <th>Call</th>
+        <th>Call seq</th>
+        <th>Call dialed num</th>
+        <th>Call answer date</th>
+        <th>Call end date</th>
+        <th>Call end date tz</th>
+        <th>Call start date</th>
+        <th>Call start date tz</th>
+        <th>Call wrap end date</th>
+        <th>Call hold number</th>
+        <th>Call queue time</th>
+        <th>Call talk time</th>
+        <th>Call hold time</th>
+        <th>Call wrap time</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @fact_call_details.each do |fact_call_detail| %>
+        <%= content_tag :tr, :id => dom_id(fact_call_detail), :class => dom_class(fact_call_detail) + " table-row", :tabindex => 0, :role => "link", :data => { :'row-url' => fact_call_detail_path(fact_call_detail) } do %>
+          <td><%= fact_call_detail.dim_client %></td>
+          <td><%= fact_call_detail.dim_timezone %></td>
+          <td><%= fact_call_detail.dim_call_category %></td>
+          <td><%= fact_call_detail.dim_call_type %></td>
+          <td><%= fact_call_detail.dim_call_action %></td>
+          <td><%= fact_call_detail.dim_call_action_reason %></td>
+          <td><%= fact_call_detail.dim_disp %></td>
+          <td><%= fact_call_detail.dim_service %></td>
+          <td><%= fact_call_detail.call_ivr_param_1 %></td>
+          <td><%= fact_call_detail.call_ivr_param_2 %></td>
+          <td><%= fact_call_detail.call_ivr_param_3 %></td>
+          <td><%= fact_call_detail.call_ivr_param_4 %></td>
+          <td><%= fact_call_detail.call_ivr_param_9 %></td>
+          <td><%= fact_call_detail.call_ivr_param_10 %></td>
+          <td><%= fact_call_detail.call_ivr_param_16 %></td>
+          <td><%= fact_call_detail.call_ivr_param_18 %></td>
+          <td><%= fact_call_detail.call_ivr_param_19 %></td>
+          <td><%= fact_call_detail.call_id %></td>
+          <td><%= fact_call_detail.call_seq %></td>
+          <td><%= fact_call_detail.call_dialed_num %></td>
+          <td><%= fact_call_detail.call_answer_date %></td>
+          <td><%= fact_call_detail.call_end_date %></td>
+          <td><%= fact_call_detail.call_end_date_tz %></td>
+          <td><%= fact_call_detail.call_start_date %></td>
+          <td><%= fact_call_detail.call_start_date_tz %></td>
+          <td><%= fact_call_detail.call_wrap_end_date %></td>
+          <td><%= fact_call_detail.call_hold_number %></td>
+          <td><%= fact_call_detail.call_queue_time %></td>
+          <td><%= fact_call_detail.call_talk_time %></td>
+          <td><%= fact_call_detail.call_hold_time %></td>
+          <td><%= fact_call_detail.call_wrap_time %></td>
+          <td class="table-row__actions">
+            <div class="btn-group">
+              <%= link_to fact_call_detail, :class => "btn table-row__link text-info py-0" do %>
+                <%= mi.visibility %>
+              <% end %>
+              <%= link_to fact_call_detail, :class => "btn table-row__link text-danger py-0", :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+                <%= mi.delete %>
+              <% end %>
+            </div>
+          </td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

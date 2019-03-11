@@ -1,0 +1,113 @@
+<% title "Show", true, true %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <%= link_to fact_call_details_path, class: 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        All Fact_call_details
+      <% end %>
+      <%= link_to edit_fact_call_detail_path(@fact_call_detail), class: 'btn btn-primary' do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        Edit
+      <% end %>
+      <h1>Show fact_call_detail</h1>
+    </div>
+
+    <dl class="dl-horizontal">
+      <dt>Dim client:</dt>
+      <dd><%= @fact_call_detail.dim_client %></dd>
+
+      <dt>Dim timezone:</dt>
+      <dd><%= @fact_call_detail.dim_timezone %></dd>
+
+      <dt>Dim call category:</dt>
+      <dd><%= @fact_call_detail.dim_call_category %></dd>
+
+      <dt>Dim call type:</dt>
+      <dd><%= @fact_call_detail.dim_call_type %></dd>
+
+      <dt>Dim call action:</dt>
+      <dd><%= @fact_call_detail.dim_call_action %></dd>
+
+      <dt>Dim call action reason:</dt>
+      <dd><%= @fact_call_detail.dim_call_action_reason %></dd>
+
+      <dt>Dim disp:</dt>
+      <dd><%= @fact_call_detail.dim_disp %></dd>
+
+      <dt>Dim service:</dt>
+      <dd><%= @fact_call_detail.dim_service %></dd>
+
+      <dt>Call ivr param 1:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_1 %></dd>
+
+      <dt>Call ivr param 2:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_2 %></dd>
+
+      <dt>Call ivr param 3:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_3 %></dd>
+
+      <dt>Call ivr param 4:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_4 %></dd>
+
+      <dt>Call ivr param 9:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_9 %></dd>
+
+      <dt>Call ivr param 10:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_10 %></dd>
+
+      <dt>Call ivr param 16:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_16 %></dd>
+
+      <dt>Call ivr param 18:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_18 %></dd>
+
+      <dt>Call ivr param 19:</dt>
+      <dd><%= @fact_call_detail.call_ivr_param_19 %></dd>
+
+      <dt>Call:</dt>
+      <dd><%= @fact_call_detail.call_id %></dd>
+
+      <dt>Call seq:</dt>
+      <dd><%= @fact_call_detail.call_seq %></dd>
+
+      <dt>Call dialed num:</dt>
+      <dd><%= @fact_call_detail.call_dialed_num %></dd>
+
+      <dt>Call answer date:</dt>
+      <dd><%= @fact_call_detail.call_answer_date %></dd>
+
+      <dt>Call end date:</dt>
+      <dd><%= @fact_call_detail.call_end_date %></dd>
+
+      <dt>Call end date tz:</dt>
+      <dd><%= @fact_call_detail.call_end_date_tz %></dd>
+
+      <dt>Call start date:</dt>
+      <dd><%= @fact_call_detail.call_start_date %></dd>
+
+      <dt>Call start date tz:</dt>
+      <dd><%= @fact_call_detail.call_start_date_tz %></dd>
+
+      <dt>Call wrap end date:</dt>
+      <dd><%= @fact_call_detail.call_wrap_end_date %></dd>
+
+      <dt>Call hold number:</dt>
+      <dd><%= @fact_call_detail.call_hold_number %></dd>
+
+      <dt>Call queue time:</dt>
+      <dd><%= @fact_call_detail.call_queue_time %></dd>
+
+      <dt>Call talk time:</dt>
+      <dd><%= @fact_call_detail.call_talk_time %></dd>
+
+      <dt>Call hold time:</dt>
+      <dd><%= @fact_call_detail.call_hold_time %></dd>
+
+      <dt>Call wrap time:</dt>
+      <dd><%= @fact_call_detail.call_wrap_time %></dd>
+
+    </dl>
+  </div>
+</div>

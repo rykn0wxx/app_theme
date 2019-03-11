@@ -1,0 +1,56 @@
+<%= simple_form_for(@fact_call_detail) do |f| %>
+
+  <% if fact_call_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fact_call_detail.errors.count, "error") %> prohibited this fact_call_detail from being saved:</h2>
+      <ul>
+      <% fact_call_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.association :dim_client %>
+  <%= f.association :dim_timezone %>
+  <%= f.association :dim_call_category %>
+  <%= f.association :dim_call_type %>
+  <%= f.association :dim_call_action %>
+  <%= f.association :dim_call_action_reason %>
+  <%= f.association :dim_disp %>
+  <%= f.association :dim_service %>
+  <%= f.association :call_ivr_param_1, :label_method => :ivr_param, :value_method => :ivr_code %>
+  <%= f.association :call_ivr_param_2 %>
+  <%= f.association :call_ivr_param_3 %>
+  <%= f.association :call_ivr_param_4 %>
+  <%= f.association :call_ivr_param_9 %>
+  <%= f.association :call_ivr_param_10 %>
+  <%= f.association :call_ivr_param_16 %>
+  <%= f.association :call_ivr_param_18 %>
+  <%= f.association :call_ivr_param_19 %>
+  <%= f.input :call_id %>
+  <%= f.input :call_seq %>
+  <%= f.input :call_dialed_num %>
+  <%= f.input :call_answer_date %>
+  <%= f.input :call_answer_date %>
+  <%= f.input :call_end_date %>
+  <%= f.input :call_end_date_tz %>
+  <%= f.input :call_start_date %>
+  <%= f.input :call_start_date_tz %>
+  <%= f.input :call_wrap_end_date %>
+  <%= f.input :call_hold_number %>
+  <%= f.input :call_queue_time %>
+  <%= f.input :call_talk_time %>
+  <%= f.input :call_hold_time %>
+  <%= f.input :call_wrap_time %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn--light mr-3" %>
+    <% if fact_call_detail.persisted? -%>
+      <%= link_to "Cancel", fact_call_detail, :class => "btn btn--default" %>
+    <% else %>
+      <%= link_to "Cancel", fact_call_details_path, :class => "btn btn--default" %>
+    <% end -%>
+  </div>
+
+<% end %>

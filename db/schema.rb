@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_164848) do
+ActiveRecord::Schema.define(version: 2019_03_11_034710) do
 
   create_table "dim_call_action_reasons", force: :cascade do |t|
     t.string "call_action_reason", limit: 50, default: "", null: false
@@ -155,6 +155,59 @@ ActiveRecord::Schema.define(version: 2019_03_10_164848) do
     t.index ["dim_client_id"], name: "index_dim_uip_users_on_dim_client_id"
     t.index ["dim_emp_user_id"], name: "index_dim_uip_users_on_dim_emp_user_id"
     t.index ["user_id"], name: "index_dim_uip_users_on_user_id", unique: true
+  end
+
+  create_table "fact_call_details", force: :cascade do |t|
+    t.integer "dim_client_id"
+    t.integer "dim_timezone_id"
+    t.integer "dim_call_category_id"
+    t.integer "dim_call_type_id"
+    t.integer "dim_call_action_id"
+    t.integer "dim_call_action_reason_id"
+    t.integer "dim_disp_id"
+    t.integer "dim_service_id"
+    t.integer "call_ivr_param_1_id"
+    t.integer "call_ivr_param_2_id"
+    t.integer "call_ivr_param_3_id"
+    t.integer "call_ivr_param_4_id"
+    t.integer "call_ivr_param_9_id"
+    t.integer "call_ivr_param_10_id"
+    t.integer "call_ivr_param_16_id"
+    t.integer "call_ivr_param_18_id"
+    t.integer "call_ivr_param_19_id"
+    t.integer "call_id"
+    t.integer "call_seq"
+    t.string "call_dialed_num"
+    t.datetime "call_answer_date"
+    t.datetime "call_end_date"
+    t.datetime "call_end_date_tz"
+    t.datetime "call_start_date"
+    t.datetime "call_start_date_tz"
+    t.datetime "call_wrap_end_date"
+    t.integer "call_hold_number"
+    t.integer "call_queue_time"
+    t.integer "call_talk_time"
+    t.integer "call_hold_time"
+    t.integer "call_wrap_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["call_ivr_param_10_id"], name: "index_fact_call_details_on_call_ivr_param_10_id"
+    t.index ["call_ivr_param_16_id"], name: "index_fact_call_details_on_call_ivr_param_16_id"
+    t.index ["call_ivr_param_18_id"], name: "index_fact_call_details_on_call_ivr_param_18_id"
+    t.index ["call_ivr_param_19_id"], name: "index_fact_call_details_on_call_ivr_param_19_id"
+    t.index ["call_ivr_param_1_id"], name: "index_fact_call_details_on_call_ivr_param_1_id"
+    t.index ["call_ivr_param_2_id"], name: "index_fact_call_details_on_call_ivr_param_2_id"
+    t.index ["call_ivr_param_3_id"], name: "index_fact_call_details_on_call_ivr_param_3_id"
+    t.index ["call_ivr_param_4_id"], name: "index_fact_call_details_on_call_ivr_param_4_id"
+    t.index ["call_ivr_param_9_id"], name: "index_fact_call_details_on_call_ivr_param_9_id"
+    t.index ["dim_call_action_id"], name: "index_fact_call_details_on_dim_call_action_id"
+    t.index ["dim_call_action_reason_id"], name: "index_fact_call_details_on_dim_call_action_reason_id"
+    t.index ["dim_call_category_id"], name: "index_fact_call_details_on_dim_call_category_id"
+    t.index ["dim_call_type_id"], name: "index_fact_call_details_on_dim_call_type_id"
+    t.index ["dim_client_id"], name: "index_fact_call_details_on_dim_client_id"
+    t.index ["dim_disp_id"], name: "index_fact_call_details_on_dim_disp_id"
+    t.index ["dim_service_id"], name: "index_fact_call_details_on_dim_service_id"
+    t.index ["dim_timezone_id"], name: "index_fact_call_details_on_dim_timezone_id"
   end
 
   create_table "tmp_fact_call_details", force: :cascade do |t|
